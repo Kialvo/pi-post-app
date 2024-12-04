@@ -53,8 +53,8 @@
                         searchable: false,
                         render: function (data, type, row) {
                             return `
-                                <a href="/scrape/users/${row.id}/edit" class="btn btn-sm btn-primary me-2">Edit</a>
-                                <a href="/scrape/users/${row.id}/confirm-delete" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="/scrape/public/users/${row.id}/edit" class="btn btn-sm btn-primary me-2">Edit</a>
+                                <a href="/scrape/public/users/${row.id}/confirm-delete" class="btn btn-sm btn-danger">Delete</a>
                             `;
                         }
                     }
