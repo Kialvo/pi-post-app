@@ -11,7 +11,7 @@ use App\Http\Controllers\{
 
 // Redirect root URL to login
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/scrape/public/login');
 });
 
 // Authentication routes (default provided by Laravel Breeze or similar)
@@ -39,7 +39,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('users', UserController::class);
         Route::get('users/{user}/confirm-delete', [UserController::class, 'confirmDelete'])->name('users.confirmDelete');
     });
-//test
+
     // Shared routes for administrators and editors
     Route::middleware(CheckRole::class . ':administrator|editor')->group(function () {
         Route::resource('posts', PostController::class);
