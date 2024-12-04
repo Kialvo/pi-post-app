@@ -22,8 +22,8 @@ class PostController extends Controller
             return datatables()->of($posts)
                 ->addColumn('actions', function ($row) {
                     return '
-                        <a href="/posts/' . $row->id . '/edit" class="btn btn-sm btn-primary me-2">Edit</a>
-                        <form action="/posts/' . $row->id . '" method="POST" style="display:inline;">
+                        <a href="/scrape/posts/' . $row->id . '/edit" class="btn btn-sm btn-primary me-2">Edit</a>
+                        <form action="/scrape/posts/' . $row->id . '" method="POST" style="display:inline;">
                             ' . csrf_field() . method_field('DELETE') . '
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
