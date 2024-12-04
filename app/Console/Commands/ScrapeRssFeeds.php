@@ -47,8 +47,10 @@ class ScrapeRssFeeds extends Command
      * Schedule the command to run every 5 minutes.
      */
     #[ScheduleAttribute(frequency: 'everyFiveMinutes')]
-    public function schedule(Schedule $schedule)
+    public function schedule(Schedule $schedule): void
     {
+        \Log::info('ScrapeRssFeeds schedule attribute was triggered.');
         $schedule->command($this->signature);
     }
+
 }
