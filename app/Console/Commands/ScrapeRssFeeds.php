@@ -3,28 +3,24 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Console\Attributes\Schedule as ScheduleAttribute;
 use App\Services\ScraperService;
 
 class ScrapeRssFeeds extends Command
 {
     /**
      * The name and signature of the console command.
-     *
-     * @var string
      */
     protected $signature = 'scrape:rss';
 
     /**
      * The console command description.
-     *
-     * @var string
      */
     protected $description = 'Scrape RSS feeds from the file located in storage';
 
     /**
      * ScraperService instance.
-     *
-     * @var ScraperService
      */
     protected $scraperService;
 
@@ -48,10 +44,11 @@ class ScrapeRssFeeds extends Command
     }
 
     /**
-     * Define the schedule for this command.
+     * Schedule the command to run every 5 minutes.
      */
-    public function schedule(\Illuminate\Console\Scheduling\Schedule $schedule)
+    #[ScheduleAttribute(frequency: 'everyFiveMinutes')]
+    public function schedule(Schedule $schedule)
     {
-        $schedule->everyMinute();
+        $schedule->command($this->signature);
     }
 }
