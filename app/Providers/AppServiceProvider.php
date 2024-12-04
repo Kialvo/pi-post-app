@@ -21,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Schedule the scrape:rss command to run every 5 minutes
-        Schedule::command('scrape:rss')->everyTwoHours();
+        Schedule::command('scrape:rss')->everyFiveMinutes();
     }
 }
