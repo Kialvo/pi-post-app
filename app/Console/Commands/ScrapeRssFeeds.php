@@ -3,8 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Console\Attributes\Schedule as ScheduleAttribute;
 use App\Services\ScraperService;
 
 class ScrapeRssFeeds extends Command
@@ -42,15 +40,4 @@ class ScrapeRssFeeds extends Command
         $this->scraperService->scrapeRssFeeds();
         $this->info('RSS scraping completed.');
     }
-
-    /**
-     * Schedule the command to run every 5 minutes.
-     */
-    #[ScheduleAttribute(frequency: 'everyFiveMinutes')]
-    public function schedule(Schedule $schedule): void
-    {
-        \Log::info('ScrapeRssFeeds schedule attribute was triggered.');
-        $schedule->command($this->signature);
-    }
-
 }
