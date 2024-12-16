@@ -9,6 +9,7 @@
         "php": "^8.2",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
+        "patrickschur/language-detection": "^5.3",
         "predis/predis": "^2.3",
         "pusher/pusher-php-server": "^7.2",
         "simple-html-dom/simple-html-dom": "^1.5",
