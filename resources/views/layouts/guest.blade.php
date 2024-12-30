@@ -13,18 +13,32 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .logo {
+            height: 250px;
+        }
+
+        .login-card {
+            border-radius: 8px;
+        }
+    </style>
 </head>
-<body style="font-family: 'Roboto', sans-serif; background-color: #f8f9fa;">
+<body>
 <div class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
     <!-- Application Logo -->
     <div class="mb-4">
         <a href="/">
-            <img src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="img-fluid" style="height: 80px;">
+            <img src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" class="logo">
         </a>
     </div>
 
     <!-- Content Slot -->
-    <div class="card shadow w-100" style="max-width: 400px;">
+    <div class="card shadow-sm w-100 login-card" style="max-width: 400px;">
         <div class="card-body p-4">
             {{ $slot }}
         </div>
