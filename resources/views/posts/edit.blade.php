@@ -90,7 +90,7 @@
 
             <!-- Summary Field -->
             <div class="mb-3">
-                <label for="summary" class="form-label">Modified Content</label>
+                <label for="summary" class="form-label">Modified Post Content</label>
                 <textarea name="summary" id="summary" class="form-control @error('summary') is-invalid @enderror" rows="3">{{ old('summary', $post->summary) }}</textarea>
                 @error('summary')
                 <div class="invalid-feedback">
