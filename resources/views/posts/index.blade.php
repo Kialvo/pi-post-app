@@ -77,13 +77,12 @@
                             var flagClass = isFlagged ? 'text-danger' : 'text-secondary';
                             var flagTitle = isFlagged ? 'Unflag this post' : 'Flag this post';
                             return `
-            <button class="btn btn-link flag-btn ${flagClass}" data-id="${row.id}" title="${flagTitle}">
-                <i class="bi bi-flag-fill" style="font-size: 1.5rem;"></i>
-            </button>
-        `;
+                            <button class="btn btn-link flag-btn ${flagClass}" data-id="${row.id}" title="${flagTitle}">
+                                <i class="bi bi-flag-fill" style="font-size: 1.5rem;"></i>
+                            </button>
+                        `;
                         }
                     },
-
                 ],
                 language: {
                     paginate: {
@@ -91,7 +90,7 @@
                         next: '<i class="bi bi-arrow-right"></i>',
                     }
                 },
-                order: [[4, 'asc']], // Default sort by flag column
+                order: [[2, 'desc']], // Default sort by date column descending
                 // Optional: Adjust initial sorting as needed
             });
 
@@ -155,4 +154,5 @@
             });
         });
     </script>
+
 @endsection
