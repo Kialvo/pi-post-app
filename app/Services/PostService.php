@@ -58,24 +58,24 @@ class PostService
         $post = Post::find($postId);
 
         if (!$post) {
-            Log::error("toggleFlag: Post not found with ID {$postId}");
+           // Log::error("toggleFlag: Post not found with ID {$postId}");
             return false;
         }
 
         if ($post->flag) {
             // If already flagged, remove the flag
             $post->flag->delete();
-            Log::info("toggleFlag: Removed flag for Post ID {$postId}");
+           // Log::info("toggleFlag: Removed flag for Post ID {$postId}");
             return false;
         } else {
             // If not flagged, add a new flag
             $flag = Flag::create(['post_id' => $postId]);
 
             if ($flag) {
-                Log::info("toggleFlag: Added flag for Post ID {$postId}");
+               // Log::info("toggleFlag: Added flag for Post ID {$postId}");
                 return true;
             } else {
-                Log::error("toggleFlag: Failed to add flag for Post ID {$postId}");
+               // Log::error("toggleFlag: Failed to add flag for Post ID {$postId}");
                 return false;
             }
         }
@@ -90,7 +90,7 @@ class PostService
     public function isFlagged(int $postId): bool
     {
         $post = Post::find($postId);
-        Log::info($post->flag);
+        //Log::info($post->flag);
         return $post && $post->flag ? true : false;
     }
 }
