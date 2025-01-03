@@ -19,4 +19,9 @@ class Post extends Model
         'summary',
         'date',
     ];
+
+    public function flag()
+    {
+        return $this->hasOne(Flag::class);
+    }
 }
